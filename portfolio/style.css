@@ -1,0 +1,251 @@
+/* VARIABLES */
+:root {
+    --bg-dark: #03040a;
+    --accent-blue: #007bff;
+    --text-light: #ffffff;
+    --text-gray: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* HEADER & NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--accent-blue); }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 30px; }
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+nav ul li a:hover { color: var(--accent-blue); }
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background: linear-gradient(90deg, #03040a 40%, rgba(3,4,10,0.4) 100%), 
+                url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1500'); /* Image d'homme barbu */
+    background-size: cover;
+    background-position: right center;
+    position: relative;
+}
+
+.hero-content { max-width: 600px; }
+
+.social-links { margin-bottom: 30px; }
+.social-links a {
+    color: var(--accent-blue);
+    margin-right: 20px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cursor {
+    color: var(--accent-blue);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero p {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.hero-btns .btn {
+    padding: 14px 35px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    display: inline-block;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--accent-blue); color: white; }
+.btn-outline { background: white; color: black; }
+
+.slider-controls {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* DIVIDER */
+.pattern-divider {
+    height: 60px;
+    background-color: #f0f4f8;
+    background-image: radial-gradient(#d1d9e6 1px, transparent 1px);
+    background-size: 20px 20px; /* Effet de motif géométrique */
+    opacity: 0.8;
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 120px 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Image et Compétences à gauche */
+.about-visual {
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(20%);
+}
+
+.skills-card {
+    position: absolute;
+    bottom: -30px;
+    right: -20px;
+    background: #080a15;
+    padding: 30px;
+    width: 320px;
+    border: 1px solid #1a1e2e;
+}
+
+.skills-card h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.skill-item { margin-bottom: 20px; }
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.percent {
+    background: var(--accent-blue);
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 10px;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #1a1e2e;
+    width: 100%;
+}
+
+.fill {
+    height: 100%;
+    background: var(--accent-blue);
+}
+
+/* Texte à droite */
+.section-tag {
+    border: 1.5px solid white;
+    display: inline-block;
+    padding: 8px 25px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* La petite flèche sous "ABOUT ME" */
+.section-tag::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid white;
+}
+
+.about-text .description {
+    color: var(--text-gray);
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-item .label {
+    display: block;
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.info-item .value {
+    font-size: 14px;
+}
+
+.blue { color: var(--text-light); }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 45px; }
+    .skills-card { position: static; width: 100%; margin-top: 20px; }
+}
